@@ -15,7 +15,7 @@ const NavBar = ({ isConnected, setIsConnected }) => {
             <li>
               <Link
                 to="/login"
-                className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100  hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
+                className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800   hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
                 onClick={() => {
                   setIsConnected(false);
                 }}
@@ -27,7 +27,7 @@ const NavBar = ({ isConnected, setIsConnected }) => {
             <li>
               <Link
                 to="/login"
-                className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100 hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
+                className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800  hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
               >
                 se connecter
               </Link>
@@ -36,7 +36,7 @@ const NavBar = ({ isConnected, setIsConnected }) => {
           <li>
             <Link
               to="/register"
-              className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100 hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
+              className="block py-2 pl-3 pr-4  text-blue-700 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800  hover:scale-125 rounded-lg transition duration-150 ease-out hover:ease-in"
             >
               créer un compte
             </Link>

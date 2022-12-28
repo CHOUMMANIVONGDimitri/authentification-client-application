@@ -47,7 +47,7 @@ function RegisterPage() {
         <HeaderSection />
       </section>
       <section>
-        <h1 className="text-center font-bold text-3xl my-8 ">
+        <h1 className="text-center font-bold text-3xl my-8 dark:text-white">
           Créer un Compte
         </h1>
         {isCreated ? (
