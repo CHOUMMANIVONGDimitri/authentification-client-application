@@ -26,14 +26,13 @@ function LoginPage({ isConnected, setIsConnected }) {
         email: email,
         password: password,
       })
-      .then(
-        (res) =>
-          (document.cookie = `token=${res.data.token};max-age=3600;sameSite=lax`)
-      )
+      .then((res) => {
+        document.cookie = `token=${res.data.token};max-age=3600;sameSite=lax`;
+        setIsConnected(true);
+      })
       .then((res) => {
         setShowAlert(false);
         navigate("/users");
-        setIsConnected(true);
       })
       .catch((error) => {
         console.error(error);
