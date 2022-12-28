@@ -23,7 +23,7 @@ function RegisterPage() {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/register", {
+      .post("https://test-technique-strateg-in.vercel.app/api/register", {
         username: username,
         email: email,
         password: password,

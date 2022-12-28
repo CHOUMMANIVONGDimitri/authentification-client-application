@@ -19,7 +19,9 @@ function UsersPage({ setIsConnected }) {
     const token = getCookie("token");
     const headers = { Authorization: `Bearer ${token}` };
     axios
-      .get("http://localhost:3000/api/users", { headers })
+      .get("https://test-technique-strateg-in.vercel.app/api/users", {
+        headers,
+      })
       .then((res) => {
         setIsLogin(true);
         setData(res.data);

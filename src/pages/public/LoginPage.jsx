@@ -22,7 +22,7 @@ function LoginPage({ setIsConnected }) {
     event.preventDefault();
 
     axios
-      .post("http://localhost:3000/api/login", {
+      .post("https://test-technique-strateg-in.vercel.app/api/login", {
         email: email,
         password: password,
       })
