@@ -35,21 +35,19 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
 
   return (
     <>
-      <div className="min-h-screen h-fit w-full flex justify-center my-12">
+      <div className="min-h-screen h-fit w-full min-w-fit flex justify-center my-12">
         {isConnected !== null && isConnected === true ? (
           <ul className="bg-gray-100 w-full lg:w-2/3 mx-4 h-fit rounded-lg dark:bg-gray-700 dark:text-white">
             <li className="flex justify-around border-b-2 border-black font-medium bg-gray-200 rounded-t-lg dark:bg-gray-600 ">
               <h2 className="w-1/3 p-6">Nom d'utilisateur</h2>
               <h2 className="w-1/3 p-6">Adresse email</h2>
-              <h2 className="w-1/3 p-6 hidden lg:block">date de création</h2>
+              <h2 className="w-1/3 p-6">date de création</h2>
             </li>
             {data.map(({ _id, username, email, createdAt }) => (
               <li key={_id} className="flex justify-around">
                 <p className="w-1/3 p-4">{username}</p>
                 <p className="w-1/3 p-4">{email}</p>
-                <p className="w-1/3 p-4 hidden lg:block">
-                  {createdAt.split("T").shift()}
-                </p>
+                <p className="w-1/3 p-4">{createdAt.split("T").shift()}</p>
               </li>
             ))}
           </ul>
