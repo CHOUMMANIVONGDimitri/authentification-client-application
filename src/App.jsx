@@ -34,22 +34,30 @@ function App() {
         <NavBar isConnected={isConnected} setIsConnected={setIsConnected} />
       </header>
       <main className="flex flex-col justify-around mx-auto py-28 w-screen h-fit dark:bg-gray-900">
-        <section>
-          <HeaderSection />
-        </section>
         <Routes>
           {/* Public */}
           <Route path="/" element={<Navigate to="/register" />} />
           <Route
             path="/login"
             element={
-              <LoginPage
-                isConnected={isConnected}
-                setIsConnected={setIsConnected}
-              />
+              <>
+                <HeaderSection />
+                <LoginPage
+                  isConnected={isConnected}
+                  setIsConnected={setIsConnected}
+                />
+              </>
             }
           />
-          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/register"
+            element={
+              <>
+                <HeaderSection />
+                <RegisterPage />{" "}
+              </>
+            }
+          />
           <Route path="/*" element={<ErrorPage />} />
           {/* Private */}
           <Route
