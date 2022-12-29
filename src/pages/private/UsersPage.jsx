@@ -36,7 +36,7 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
 
   return (
     <>
-      <div className="min-h-screen h-fit w-screen min-w-fit py-12 px-12">
+      <div className="min-h-screen h-fit w-screen py-12 px-12">
         {isConnected !== null && isConnected === true ? (
           <ul className="bg-gray-100 w-4/5lg:w-2/3 h-fit rounded-lg dark:bg-gray-700 dark:text-white">
             <li className="flex justify-around border-b-2 border-black font-medium bg-gray-200 rounded-t-lg dark:bg-gray-600 ">
