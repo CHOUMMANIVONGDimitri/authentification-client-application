@@ -5,7 +5,7 @@ import { PropTypes } from "prop-types";
 import HeaderSection from "../../components/HeaderSection";
 import AlertMessage from "../../components/AlertMessage";
 
-function LoginPage({ isConnected, setIsConnected }) {
+function LoginPage({ setIsConnected }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
@@ -132,5 +132,4 @@ export default LoginPage;
 
 LoginPage.propTypes = {
   setIsConnected: PropTypes.func.isRequired,
-  isConnected: PropTypes.bool,
 };

@@ -22,7 +22,7 @@ function App() {
 
   useEffect(() => {
     if (isConnected === false) {
-      console.log("ok");
+      console.log(document.cookie.length);
       document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
     }
   }, [isConnected]);

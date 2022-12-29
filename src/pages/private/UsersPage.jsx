@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PropTypes } from "prop-types";
 import AlertMessage from "../../components/AlertMessage";
+import { useNavigate } from "react-router-dom";
 
 const UsersPage = ({ isConnected, setIsConnected }) => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const getCookie = (name) => {
     const value = `; ${document.cookie}`;
@@ -12,14 +14,6 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
     if (parts.length === 2) {
       return parts.pop().split(";").shift();
     }
-  };
-
-  // delay message
-
-  const timeMessage = () => {
-    setTimeout(() => {
-      setIsConnected(false);
-    }, 1000);
   };
 
   useEffect(() => {
@@ -35,14 +29,13 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
       })
       .catch((error) => {
         console.error(error);
-        timeMessage();
-        clearTimeout(timeMessage);
+        navigate("/login");
       });
   }, []);
 
   return (
     <>
-      <div className="h-screen flex items-center justify-center my-12">
+      <div className="min-h-screen h-fit w-full flex justify-center my-12">
         {isConnected !== null && isConnected === true ? (
           <ul className="bg-gray-100 w-full lg:w-2/3 mx-4 h-fit rounded-lg dark:bg-gray-700 dark:text-white">
             <li className="flex justify-around border-b-2 border-black font-medium bg-gray-200 rounded-t-lg dark:bg-gray-600 ">
