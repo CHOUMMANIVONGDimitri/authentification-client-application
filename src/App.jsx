@@ -8,6 +8,7 @@ import ErrorPage from "./pages/public/ErrorPage";
 import UsersPage from "./pages/private/UsersPage";
 import NavBar from "./components/Navbar";
 import FooterSection from "./components/FooterSection";
+import HeaderSection from "./components/HeaderSection";
 
 function App() {
   const [isConnected, setIsConnected] = useState(null);
@@ -28,11 +29,14 @@ function App() {
   }, [isConnected]);
 
   return (
-    <div className="dark:bg-gray-900 h-fit">
+    <div className="dark:bg-gray-900 h-screen flex flex-col justify-between">
       <header className="fixed top-0 right-0 left-0">
         <NavBar isConnected={isConnected} setIsConnected={setIsConnected} />
       </header>
-      <main className="py-24">
+      <main className="flex flex-col justify-around mx-auto py-28 w-screen h-fit dark:bg-gray-900">
+        <section>
+          <HeaderSection />
+        </section>
         <Routes>
           {/* Public */}
           <Route path="/" element={<Navigate to="/register" />} />
@@ -59,7 +63,7 @@ function App() {
           />
         </Routes>
       </main>
-      <footer className="py-12">
+      <footer>
         <FooterSection />
       </footer>
     </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import HeaderSection from "../../components/HeaderSection";
 import axios from "axios";
 import AlertMessage from "../../components/AlertMessage";
 
@@ -47,9 +46,6 @@ function RegisterPage() {
 
   return (
     <>
-      <section className="w-2/3 mx-auto my-12 ">
-        <HeaderSection />
-      </section>
       <section>
         <h1 className="text-center font-bold text-3xl my-8 dark:text-white">
           Créer un Compte

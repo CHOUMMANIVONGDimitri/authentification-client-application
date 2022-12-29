@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { PropTypes } from "prop-types";
-import HeaderSection from "../../components/HeaderSection";
 import AlertMessage from "../../components/AlertMessage";
 
 function LoginPage({ setIsConnected }) {
@@ -46,9 +45,6 @@ function LoginPage({ setIsConnected }) {
 
   return (
     <>
-      <section className="w-2/3 mx-auto my-12">
-        <HeaderSection />
-      </section>
       <section>
         <h1 className="text-center font-bold text-3xl my-4 dark:text-white">
           Se Connecter

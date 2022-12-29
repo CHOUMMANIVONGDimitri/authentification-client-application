@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 const UsersPage = ({ isConnected, setIsConnected }) => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  setIsConnected(true);
 
   const getCookie = (name) => {
     const value = `; ${document.cookie}`;
@@ -35,9 +36,9 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
 
   return (
     <>
-      <div className="min-h-screen h-fit w-full min-w-fit flex justify-center my-12">
+      <div className="min-h-screen h-fit w-screen min-w-fit py-12 px-12">
         {isConnected !== null && isConnected === true ? (
-          <ul className="bg-gray-100 w-full lg:w-2/3 mx-4 h-fit rounded-lg dark:bg-gray-700 dark:text-white">
+          <ul className="bg-gray-100 w-4/5lg:w-2/3 h-fit rounded-lg dark:bg-gray-700 dark:text-white">
             <li className="flex justify-around border-b-2 border-black font-medium bg-gray-200 rounded-t-lg dark:bg-gray-600 ">
               <h2 className="w-1/3 p-6">Nom d'utilisateur</h2>
               <h2 className="w-1/3 p-6">Adresse email</h2>
@@ -45,9 +46,11 @@ const UsersPage = ({ isConnected, setIsConnected }) => {
             </li>
             {data.map(({ _id, username, email, createdAt }) => (
               <li key={_id} className="flex justify-around">
-                <p className="w-1/3 p-4">{username}</p>
-                <p className="w-1/3 p-4">{email}</p>
-                <p className="w-1/3 p-4">{createdAt.split("T").shift()}</p>
+                <p className="w-1/3 p-4 overflow-x-auto">{username}</p>
+                <p className="w-1/3 p-4 overflow-x-auto">{email}</p>
+                <p className="w-1/3 p-4 overflow-x-auto">
+                  {createdAt.split("T").shift()}
+                </p>
               </li>
             ))}
           </ul>
